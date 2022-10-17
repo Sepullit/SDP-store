@@ -1,0 +1,185 @@
+.section-useful {
+  margin-bottom: 71px;
+
+  &__container {
+    position: relative;
+  }
+
+  &__img {
+    width: 100%;
+    background-color: gray;
+  }
+
+  &__btn {
+    position: absolute;
+    top: 0;
+  }
+
+  &__btn-prev {
+    right: 65px;
+    transform: rotate(180deg);
+  }
+
+  &__btn-next {
+    right: 20px;
+  }
+
+  &__swiper-slide {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    border-radius: 10px;
+    background-color: $color-background;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &__slide {
+    &-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-left: 30px;
+      padding-right: 30px;
+      padding-top: 33px;
+      padding-bottom: 120px;
+      min-height: 250px;
+    }
+
+    &-text {
+      font-size: 24px;
+      line-height: 32px;
+    }
+
+    &-btn {
+      position: absolute;
+      bottom: 30px;
+      left: 30px;
+      margin-top: 30px;
+      width: 128px;
+    }
+  }
+}
+
+@media (max-width: $breakepoint-first) {
+  .section-useful {
+    &__swiper-slide {
+      min-height: 456px;
+    }
+
+    &__slide {
+      &-1 {
+        background-image: url(../img/useful1_1024.webp);
+      }
+
+      &-2 {
+        background-image: url(../img/useful2_1024.webp);
+      }
+
+      &-3 {
+        background-image: url(../img/useful3_1024.webp);
+      }
+
+      &-4 {
+        background-image: url(../img/useful4_1024.webp);
+      }
+
+      &-5 {
+        background-image: url(../img/useful5_1024.webp);
+      }
+
+      &-content {
+        min-height: 254px;
+        padding-top: 31px;
+      }
+
+      &-text {
+        font-size: 16px;
+        line-height: 22px;
+      }
+    }
+  }
+}
+
+@media (max-width: $breakepoint-third) {
+  .section-useful {
+    &__container {
+      padding-bottom: 48px;
+    }
+
+
+    &__swiper-slide {
+      background-size: 100% 44.5%;
+    }
+
+    &__slide {
+
+      &-content {
+        padding-bottom: 30px;
+      }
+
+      &-1 {
+        background-image: url(../img/useful1.webp);
+      }
+
+      &-2 {
+        background-image: url(../img/useful2.webp);
+      }
+
+      &-3 {
+        background-image: url(../img/useful3.webp);
+      }
+
+      &-4 {
+        background-image: url(../img/useful4.webp);
+      }
+
+      &-5 {
+        background-image: url(../img/useful5.webp);
+      }
+    }
+
+    &__btn {
+      top: auto;
+      bottom: 0;
+      left: 52.5%;
+    }
+
+    &__btn-prev {
+      left: 38%;
+    }
+  }
+}
+
+@media (max-width: $breakepoint-xs) {
+  .section-useful {
+
+
+    &__swiper-slide {
+      background-size: contain;
+    }
+
+    &__slide {
+      &-1 {
+        background-image: url(../img/useful1_1024.webp);
+      }
+
+      &-2 {
+        background-image: url(../img/useful2_1024.webp);
+      }
+
+      &-3 {
+        background-image: url(../img/useful3_1024.webp);
+      }
+
+      &-4 {
+        background-image: url(../img/useful4_1024.webp);
+      }
+
+      &-5 {
+        background-image: url(../img/useful5_1024.webp);
+      }
+    }
+  }
+}

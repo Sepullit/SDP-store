@@ -1,0 +1,152 @@
+.section-contactpage {
+  margin-top: -13px;
+  margin-bottom: 70px;
+
+  &__map {
+    max-width: 1280px;
+    height: 510px;
+  }
+
+  &__tooltip {
+    max-width: 343px;
+    padding: 30px;
+    margin: 0;
+    border-radius: 10px;
+
+    &-link {
+      margin-bottom: 13px;
+      width: max-content;
+    }
+
+    &-header {
+      margin-bottom: 7px;
+      font-size: 16px;
+      font-weight: 600;
+      font-family: 'Open Sans';
+    }
+
+    &-address {
+      margin-bottom: 8px;
+      font-size: 14px;
+      line-height: 25px;
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    &-block {
+      display: block;
+      padding: 13px 0;
+      border-top: 1px solid $color-border;
+    }
+
+    &-text {
+      display: inline;
+    }
+
+    &-span {
+      display: inline;
+      color: $color-addtext;
+    }
+  }
+
+  &__header {
+    margin-bottom: 12px;
+  }
+
+  &__input {
+    margin-right: 27px;
+    padding: 7px 18px;
+    width: 48.8%;
+    font-size: 16px;
+    line-height: 40px;
+    border: 0;
+    border-radius: 10px;
+    background-color: $color-background;
+  }
+
+  &__input::placeholder {
+    font-family: 'Open Sans';
+    color: $color-addtext;
+  }
+
+  &__btn {
+    padding: 16px 35px;
+  }
+
+  &__form {
+    margin-bottom: 33px;
+  }
+
+}
+
+@media (max-width: $breakepoint-first) {
+  .section-contactpage {
+    &__input {
+      width: 65.7%;
+    }
+  }
+}
+
+@media (max-width: $breakepoint-second) {
+  .section-contactpage {
+    &__input {
+      width: 64.7%;
+    }
+  }
+}
+
+@media (max-width: $breakepoint-third) {
+  .section-contactpage {
+    margin-top: 0;
+
+    &__header {
+      margin-bottom: 15px;
+    }
+
+    &__input {
+      margin-right: 0;
+      margin-bottom: 15px;
+      width: 100%;
+    }
+
+    &__tooltip {
+      max-width: 232px;
+      padding-top: 24px;
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-bottom: 29px;
+      margin: 0;
+      border-radius: 10px;
+
+      &-link {
+        margin-bottom: 13px;
+        width: max-content;
+      }
+
+      &-header {
+        margin-bottom: 5px;
+        font-size: 14px;
+      }
+
+      &-address {
+        margin-bottom: 12px;
+        font-size: 12px;
+        line-height: 16px;
+      }
+
+      &-block {
+        padding: 5px 0;
+      }
+
+      &-text {
+        font-size: 12px;
+        line-height: 180%;
+      }
+
+      &-span {
+        font-size: 12px;
+        line-height: 180%;
+      }
+    }
+  }
+}

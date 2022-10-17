@@ -1,0 +1,150 @@
+.section-contacts {
+  margin-bottom: 70px;
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 32px
+  }
+
+  &__left-block {
+    grid-column: span 6;
+  }
+
+  &__img {
+    padding-top: 25px;
+    width: 100%;
+    max-width: 624px;
+  }
+
+  &__picture {
+    grid-column: span 6;
+  }
+
+  &__header {
+    margin-bottom: 9px;
+  }
+
+  &__text {
+    margin-bottom: 16px;
+    font-size: 14px;
+    color: $color-cost;
+  }
+
+  &__span {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+    transform: translate(0px, 2px);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url(../img/tooltip.svg);
+    transition: background-image 0.3s ease-in-out;
+  }
+
+  &__span:hover {
+    background-image: url(../img/tooltip_active.svg);
+  }
+
+  &__span:focus-visible {
+    background-image: url(../img/tooltip_active.svg);
+  }
+
+  &__span:active {
+    background-image: url(../img/tooltip_active.svg);
+  }
+
+  &__input {
+    margin-bottom: 30px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+    padding-right: 18px;
+    padding-left: 18px;
+    width: 100%;
+    font-family: 'Open Sans';
+    font-size: 16px;
+    line-height: 40px;
+    color: $color-text;
+    outline: 0;
+    border: 0;
+    border-radius: 10px;
+    background-color: $color-border;
+    cursor: pointer;
+  }
+
+  &__btn {
+    margin-bottom: 12px;
+    padding: 16px 35px;
+    font-weight: 600;
+  }
+}
+
+@media (max-width: $breakepoint-first) {
+  .section-contacts {
+    &__container {
+      grid-template-columns: repeat(9, 1fr);
+    }
+
+    &__left-block {
+      grid-column: span 4;
+    }
+
+    &__picture {
+      grid-column: span 5;
+    }
+
+    &__img {
+      padding-top: 77px;
+    }
+  }
+}
+
+
+@media (max-width: $breakepoint-second) {
+  .section-contacts {
+    &__container {
+      grid-template-columns: repeat(6, 1fr);
+    }
+
+    &__left-block {
+      grid-column: span 4;
+    }
+
+    &__picture {
+      grid-column: span 2;
+    }
+
+    &__img {
+      padding-top: 13px;
+    }
+  }
+}
+
+@media (max-width: $breakepoint-third) {
+  .section-contacts {
+    &__container {
+      grid-template-columns: repeat(6, 1fr);
+    }
+
+    &__header {
+      margin-bottom: 7px;
+    }
+
+    &__left-block {
+      grid-column: span 6;
+    }
+
+    &__picture {
+      display: none;
+    }
+
+    &__label {
+      font-size: 12px;
+    }
+
+    &__label::before {
+      margin-right: 6px;
+    }
+  }
+}

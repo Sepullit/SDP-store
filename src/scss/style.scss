@@ -1,0 +1,555 @@
+@import '_variable.scss';
+@import '_mixin.scss';
+@import '_fonts.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+html {
+  font-family: 'Open Sans';
+  font-size: 16px;
+  color: $color-text;
+}
+
+body {
+  position: relative;
+  min-width: 320px;
+}
+
+
+h1 {
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  color: $color-text;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: $color-text;
+}
+
+svg circle {
+  @include svg-effects;
+}
+
+svg path {
+  @include svg-effects;
+}
+
+svg use {
+  @include svg-effects;
+}
+
+svg rect {
+  @include svg-effects;
+}
+
+.container {
+  max-width: 1320px;
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;  
+  height: 1px;  
+  margin: -1px;  
+  border: 0;  
+  padding: 0;
+  clip: rect(0, 0, 0, 0);  
+  overflow: hidden;
+  }
+  
+.btn {
+  font-family: 'Open Sans';
+  outline: 0;
+  cursor: pointer;
+  border: 0;
+  transition-property: background-color, outline, color;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.3s;
+}
+
+.btn-icon {
+  border: 0;
+  background-color: $color-none;
+}
+
+.btn-type-1 {
+  padding: 19px 50px;
+  font-size: 16px;
+  font-weight: 700;
+  color: $color-light;
+  outline: 0;
+  border-radius: 10px;
+  background-color: $color-main;
+}
+
+.btn-type-1:focus-visible {
+  outline: 1px solid $color-active;
+  background-color: $color-main-light;
+}
+
+.btn-type-1:hover {
+  background-color: $color-main-light;
+}
+
+.btn-type-1:active {
+  background-color: $color-active;
+}
+
+.btn-type-1:disabled {
+  color: $color-addtext;
+  background-color: $color-background-dark;
+}
+
+
+.btn-type-2 {
+  padding: 14px 33px;
+  font-size: 16px;
+  font-weight: 600;
+  color: $color-main;
+  border: 2px solid $color-main;
+  border-radius: 10px;
+}
+
+.btn-type-2:focus-visible {
+  color: $color-light;
+  border-color: $color-main;
+  background-color: $color-main-light;
+}
+
+.btn-type-2:hover {
+  color: $color-light;
+  background-color: $color-main;
+}
+
+.btn-type-2:active {
+  color: $color-light;
+  border-color: $color-active;
+  background-color: $color-active;
+}
+
+.btn-arrow {
+  width: 32px;
+  height: 32px;
+  outline: 0;
+}
+
+.btn-arrow:focus-visible svg circle{
+  fill: $color-focus;
+  stroke: $color-main;
+}
+
+.btn-arrow:focus-visible svg path{
+  fill: $color-focus;
+  stroke: $color-light;
+}
+
+.btn-arrow:hover svg circle{
+  fill: $color-main;
+  stroke: $color-main;
+}
+
+.btn-arrow:hover svg path{
+  fill: $color-main;
+  stroke: $color-light;
+}
+
+.btn-arrow:active svg circle{
+  fill: $color-active;
+  stroke: $color-active;
+}
+.btn-arrow:active svg path{
+  fill: $color-active;
+  stroke: $color-light;
+}
+
+.btn-arrow:disabled svg path {
+  stroke: $color-addtext;
+}
+
+.btn-arrow:disabled svg circle {
+  stroke: $color-addtext;
+}
+
+.btn-arrow:disabled:hover svg circle {
+  fill: $color-none;
+}
+
+.btn-arrow:disabled:hover svg path {
+  fill: $color-none;
+}
+
+.section-header {
+  margin-bottom: 26px;
+  font-size: 32px;
+  line-height: 32px;
+  font-weight: 400;
+}
+
+
+.card-name {
+  max-width: 236px;
+  margin-bottom: 20px;
+  font-size: 24px;
+  line-height: 130%;
+  font-weight: 400;
+}
+
+
+.tippy-box {
+  border-radius: 0;
+  background-color: $color-text;
+  text-align: center;
+  max-width: 157px;
+}
+
+.tippy-arrow {
+  color: $color-text;
+}
+
+.tippy-content {
+  max-width: 157px;
+  padding: 5px;
+  text-align: center;
+  font-family: 'Open Sans';
+  font-weight: 400;
+  font-size: 9px;
+  line-height: 14px;
+}
+
+.js-validate-error-label {
+  position: absolute;
+  margin-left: 18px;
+  margin-top: -104px;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+
+.link {
+  display: block;
+  position: relative;
+  width: auto;
+  font-size: 16px;
+  font-weight: 700;
+  color: $color-main;
+  transition: color 0.3s ease-in-out;
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  width: 81px;
+  left: 0;
+  bottom: 5px;
+  border-bottom: 2px solid $color-main;
+  opacity: 0;
+  transition-property: border-color, opacity;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.3s;
+}
+
+.link:hover::after {
+  opacity: 1;
+}
+
+.link:focus::after {
+  opacity: 1;
+}
+
+.link:active {
+  color: $color-active;
+}
+
+.link:active::after {
+  opacity: 1;
+  border-color: $color-active;
+}
+
+.menu-link {
+  position: relative;
+  outline: 0;
+}
+
+.menu-link::after {
+  @include before-after;
+  top: -1px;
+  bottom: -1px;
+  left: -8px;
+  right: -8px;
+  background-color: $color-focus;
+}
+
+.menu-link:focus-visible {
+  color: $color-active;
+}
+
+.menu-link:focus-visible::after {
+  opacity: 1;
+}
+
+.menu-link:hover {
+  color: $color-main;
+}
+
+.menu-link:active {
+  color: $color-active;
+}
+
+.modalwindow-size {
+  width: 66.66%;
+}
+
+.contact-input {
+  transition-property: background-color, outline;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+}
+
+
+.contact-input:focus-visible {
+  outline: 1px solid $color-main;
+  background-color: $color-focus;
+}
+
+.contact-input:hover {
+  background-color: $color-background-dark;
+}
+
+.contact-input:active {
+  outline: 1px solid $color-true;
+  background-color: $color-border;
+}
+
+.visible-checkbox {
+  display: inline-block;
+  flex-shrink: 0;
+  flex-grow: 0;
+  margin-right: 8px;
+  width: 14px;
+  height: 14px;
+  border: 1px solid $color-addtext;
+  }
+
+  .visible-checkbox::before {
+  content: "";
+  display: inline-block;
+  margin-right: 8px;
+  width: 14px;
+  height: 14px;
+  opacity: 0;
+  border: 1px solid $color-addtext;
+  border-radius: 2px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  transform: translate(-2px, -3px);
+  transition: border-color 0.3ms ease-in-out;
+  }
+
+
+  .checkbox:checked+.visible-checkbox::before {
+  opacity: 1;
+  background-color: $color-main;
+  background-image: url(@img/check.svg);
+  }
+
+  .checkbox:focus+.visible-checkbox::before {
+  background-color: $color-main;
+  }
+
+
+  .checkbox:checked+.visible-checkbox,
+  .checkbox:focus+.visible-checkbox,
+  .check-label:hover .visible-checkbox {
+  border-color: $color-addtext;
+  }
+
+  .checkbox:checked+.check-text,
+  .checkbox:focus+.check-text,
+  .check-label:hover .check-text {
+  color: $color-main;
+  }
+
+  .checkbox:checked+.visible-checkbox::before {
+  opacity: 1;
+  background-color: $color-main;
+  background-image: url(@img/check.svg);
+  }
+
+  .checkbox:focus-visible+.visible-checkbox::before {
+    outline: 1px solid $color-main;
+  }
+
+  .check-text {
+    vertical-align: middle;
+    cursor: pointer;
+    font-size: 14px;
+    color: $color-text;
+  }
+
+.check-label {
+   display: flex;
+  justify-content: start;
+  align-content: center;
+  align-items: center;
+
+  &__link {
+    text-decoration: underline;
+    color: $color-main;
+  }
+}
+
+.ymaps-2-1-79-map ymaps, .ymaps-2-1-79-map, .ymaps-2-1-79-map ymaps:before {
+  border-radius: 10px;
+}
+
+.ymaps-2-1-79-balloon__close+.ymaps-2-1-79-balloon__content {
+  margin: 0 !important;
+}
+
+.ymaps-2-1-79-balloon__close-button {
+  position: absolute !important;
+  top: 5px !important;
+  right: 10px !important;
+}
+
+.ymaps-2-1-79-balloon__content {
+  padding: 0 !important;
+  margin: 0 !important;
+  font-family: 'Open Sans'!important;
+
+}
+
+.ymaps-2-1-79-searchbox {
+  opacity: 0;
+}
+
+@media (max-width: $breakepoint-first) {
+  .container {
+    max-width: 992px;
+  }
+
+  .modalwindow-size {
+    width: 92.96%;
+  }
+}
+
+@media (max-width: $breakepoint-second) {
+  .container {
+    max-width: 664px;
+  }
+}
+
+@media (max-width: $breakepoint-third) {
+  .container {
+    padding-left: 12px;
+    padding-right: 12px;
+    max-width: 100%;
+  }
+
+  .section-header {
+    font-size: 24px;
+    line-height: 24px;
+  }
+
+  .js-validate-error-label {
+    margin-top: -87px;
+  }
+
+  .ymaps-2-1-79-balloon__close-button {
+    width: 12px !important;
+    height: 12px !important;
+    position: absolute !important;
+    top: 12px !important;
+    right: 12px !important;
+  }
+}
+
+.noUi-horizontal .noUi-handle {
+  width: 13px;
+  height: 13px;
+  right: -7px;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0);
+  @include mixrange($url-color-main);
+  border: 0;
+  box-shadow: none;
+  cursor: pointer;
+  transition: background-image 0.3s ease-in-out;
+}
+
+.noUi-handle:after, .noUi-handle:before {
+  display: none;
+}
+
+.noUi-handle:hover {
+  @include mixrange($url-color-main-light);
+}
+
+.noUi-handle:active {
+  @include mixrange($url-color-active);
+}
+
+.noUi-handle:focus-visible {
+  @include mixrange($url-color-active);
+}
+
+.noUi-target {
+  background-color: $color-background-dark;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.noUi-horizontal {
+  height: 3px;
+}
+
+.noUi-connect {
+  background-color: $color-main;
+}
+
+.noUi-connect:active {
+  background-color: $color-active;
+}
+
+@import '_animation.scss';
+@import '_navigation.scss';
+@import '_header.scss';
+@import '_hero.scss';
+@import '_special.scss';
+@import '_cards.scss';
+@import '_sectionrating.scss';
+@import '_baner.scss';
+@import '_topcategory.scss';
+@import '_useful.scss';
+@import '_contacts.scss';
+@import '_footer.scss';
+@import '_catalog.scss';
+@import '_productpage.scss';
+@import '_cooperation.scss';
+@import '_contactpage.scss';
+
+
+.close {
+  display: none;
+  opacity: 0;
+}
+
+

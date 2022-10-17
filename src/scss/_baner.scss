@@ -1,0 +1,95 @@
+.section-baner {
+  margin-bottom: 69px;
+    padding-top: 160px;
+    padding-bottom: 149px;
+    background-image: url('../img/baner.webp');
+    background-position: center;
+    background-size: cover;
+    background-color: gray;
+  
+
+  &__header {
+    font-size: 60px;
+    line-height: 60px;
+    letter-spacing: 1px;
+    font-family: 'PlayfairDisplay';
+    color: $color-baner;
+  }
+
+  &__mainheader {
+    margin-bottom: 45px;
+    max-width: 508px;
+    font-size: 48px;
+    line-height: 62px;
+    font-weight: 400;
+    color: $color-light;
+  }
+
+  &__content-btn {
+    padding-top: 19px;
+    padding-left: 32px;
+    padding-bottom: 20px;
+    padding-right: 32px;
+  }
+
+}
+
+@media (max-width: $breakepoint-first) {
+  .section-baner {   
+      background-image: url('../img/baner_1024.webp');    
+  }
+}
+
+
+@media (max-width: $breakepoint-second) {
+  .section-baner {
+    margin-bottom: 68px; 
+    background-image: url('../img/baner_768.webp');
+
+    &-container {
+      margin: 0;
+      padding-left: 37px;
+    }
+  }
+}
+
+@media (max-width: $breakepoint-third) {
+  .section-baner {
+    max-height: 210px;
+    margin-bottom: 32px;
+    padding-top: 32px;
+    padding-bottom: 65px;
+    
+
+    &__content-btn {
+      margin-top: 99px;
+      width: 100%;
+    }
+
+    &-container {
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 12px;
+    }
+
+    &__mainheader {
+      max-width: 187px;
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    &__header {
+      margin-bottom: 3px;
+      letter-spacing: 0.5px;
+      font-size: 24px;
+      line-height: 24px;
+    }
+
+  }
+}
+
+@media (max-width: $breakepoint-xs) {
+  .section-baner {
+      background-image: url('../img/baner_320.webp'); 
+  }
+}

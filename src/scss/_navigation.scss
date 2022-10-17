@@ -1,0 +1,37 @@
+.nav {
+  margin-bottom: 29px;
+
+  &__list {
+    display: flex;
+
+    &-item {
+      color: $color-addtext;
+    }
+
+    &-link {
+      padding-right: 3px;
+      font-size: 14px;
+      color: $color-addtext;
+    }
+
+    &-item:last-child a {
+      color: $color-active;
+    }
+
+    &-item:not(:first-child) {
+      padding-left: 6px;
+    }
+  }
+}
+
+@media (max-width: $breakepoint-first) {
+  .nav {
+    margin-bottom: 31px;
+  }
+}
+
+@media (max-width: $breakepoint-third) {
+  .nav {
+    display: none;
+  }
+}

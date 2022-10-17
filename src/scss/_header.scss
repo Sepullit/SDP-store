@@ -1,0 +1,848 @@
+.option {
+  position: relative;
+  z-index: 10;
+  padding: 0;
+  outline: 0;
+  transition: color 0.3s ease-in-out;
+}
+
+.option::after {
+  @include before-after;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background-color: $color-focus;
+  background-image: none;
+}
+
+.option:hover {
+  background-color: $color-none;
+  color: $color-main-light;
+}
+
+.option:active {
+  color: $color-active;
+}
+
+.option:focus-visible {
+  color: $color-active;
+}
+
+.option:focus-visible::after {
+  opacity: 1;
+}
+
+.user-svg {
+  width: 26px;
+  height: 28px;
+  &-use {
+    fill: $color-main;
+  }
+}
+
+.basket-svg {
+  width: 32px;
+  height: 28px;
+
+  &-use {
+    fill: $color-main;
+  }
+}
+
+.basket-span {
+  display: inline-block;
+  width: 14px;
+  height: 15px;
+  font-size: 10px;
+  font-weight: 700;
+  color: $color-light;
+  border-radius: 100px;
+  background-color: $color-highlight;
+}
+
+.btn-basket {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 41px;
+  height: 28px;
+}
+
+.btn-user {
+  width: 26px;
+  height: 28px;
+}
+
+.users-button {
+  position: relative;
+  z-index: 10;
+}
+
+.users-button::after {
+  @include before-after;
+  top: -5px;
+  bottom: -5px;
+  left: -5px;
+  right: -5px;
+  background-color: $color-main-light;
+}
+
+.users-button:focus-visible svg use{
+  fill: $color-light;
+}
+
+.users-button:focus-visible::after {
+  opacity: 1;
+}
+
+.users-button:hover svg use {
+  fill: $color-main-light;
+}
+
+.users-button:active svg use {
+  fill: $color-active;
+}
+
+.header {
+  margin-bottom: 32px;
+}
+
+.header-top {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: $color-background;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__left-block {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 27.5%;
+  }
+
+  &__block {
+    min-width: 179px;
+  }
+
+  &__select-region {
+    display: inline-block;
+    border: 0;
+    background-color: $color-none;
+  }
+
+  &__link {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 10;
+    font-size: 14px;
+    font-family: 'Open Sans';
+    color: $color-highlight;
+    outline: 0;
+    transition: color 0.3s ease-in-out;
+
+    &-svg {
+      display: inline;
+      width: 22px;
+      height: 22px;
+
+      &-use {
+        fill: $color-highlight;
+        transition: fill 0.3s ease-in-out;
+      }
+    }
+  }
+
+  &__link::after {
+    @include before-after;
+    top: -2px;
+    bottom: -2px;
+    right: 0px;
+    left: 0px;
+    background-color: $color-phone-focuse;
+  }
+
+  &__link:focus-visible::after {
+    opacity: 1;
+  }
+
+  &__link:hover {
+    color: $color-phone-hover;
+  }
+
+  &__link:hover svg use {
+    fill: $color-phone-hover;
+  }
+
+  &__link:active {
+    color: $color-phone-active;
+  }
+
+  &__link:active svg use {
+    fill: $color-phone-active;
+  }
+
+
+  &__nav {
+    width: 55.6%;
+  }
+
+  &__list {
+    justify-content: flex-end;
+   
+    &-item:not(:first-child) {
+      padding-left: 64px;
+    }
+    
+  }
+
+  &__select {
+    display: inline-block;
+    max-width: 77px;
+
+    &-toggle {
+      position: relative;
+      z-index: 10;
+      padding: 0;
+      font-family: 'Open Sans';
+      font-style: normal;
+      color: $color-main;
+      border: 0;
+      outline: 0;
+      background-color: $color-none;
+      transition: color 0.3s ease-in-out;
+    }
+
+    &-toggle::before {
+      @include before-after;
+      top: 0px;
+      left: -4px;
+      bottom: -1px;
+      right: -4px;
+      background-color: $color-focus;
+    }
+
+    &-toggle:hover {
+      color: $color-main-light;
+    }
+
+    &-toggle:focus-visible {
+      color: $color-active;
+    }
+
+    &-toggle:focus-visible::before {
+      opacity: 1;
+    }
+
+    &-toggle:active {
+      color: $color-active;
+    }
+
+    &-toggle::after {
+      margin-left: 0;
+      width: 13px;
+      height: 8px;
+      @include arrow-color($url-color-main);
+      transition: background-image 0.3s ease-in-out;
+    }
+
+    &-toggle:focus-visible::after {
+      @include arrow-color($url-color-active);
+    }
+
+    &-toggle:hover::after {
+      @include arrow-color($url-color-main-light);
+    }
+
+    &-toggle:active::after {
+      @include arrow-color($url-color-active);
+    }
+
+    &-option.select__option_selected {
+      display: none;
+    }
+
+    &-dropdown {
+      z-index: 100;
+      padding: 14px;
+      padding-bottom: 19px;
+      top: 27px;
+      font-size: 14px;
+      font-family: 'Open Sans';
+      border-radius: 0;
+      border: 2px solid $color-border;
+    }
+
+    &-option:not(:last-child) {
+      margin-bottom: 11px;
+    }
+  }
+}
+
+.head-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  height: 100%;
+
+  &-link {
+    position: relative;
+    z-index: 10;
+    font-size: 14px;
+    color: $color-addtext;
+    outline: 0;
+    transition: color 0.3s ease-in-out;
+  }
+}
+
+.subheader-top {
+  display: none;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  background-color: $color-background;
+
+  &__list {
+    justify-content: space-between;
+  }
+  
+  &__container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__btn-user {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__nav {
+    width: 74.5%;
+  }
+
+  &__button-block {
+    display: flex;
+    justify-content: space-between;
+    width: 10.4%;
+  }
+}
+
+.overheader {
+  display: none;
+  padding-top: 12px;
+  padding-bottom: 6px;
+  background-color: $color-background;
+
+  &__container {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.header-middle {
+  position: relative;
+  padding-top: 30px;
+  padding-bottom: 28px;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  &__menu {
+    display: block;
+    position: absolute;
+    z-index: 200;
+    padding-top: 34px;
+    padding-bottom: 60px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: $color-light;
+    background-image: url(../img/logoBurgerMenu.svg);
+    background-repeat: no-repeat;
+    background-position: bottom 60px right 72px;
+
+    &-btn {
+      margin-bottom: 34px;
+
+      &-svg {
+        width: 24px;
+        height: 24px;
+
+        &-use {
+          fill: $color-main;
+        }
+      }
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      max-width: 352px;
+      max-height: 148px;
+    }
+
+    &-item:not(:nth-child(3n)) {
+      margin-bottom: 41px;
+    }
+
+    &-item {
+      padding-right: 10px;
+    }
+
+    &-footer {
+      display: none;
+      padding-top: 20px;
+      padding-bottom: 24px;
+      background-color: $color-background;
+
+      &-list {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+      }
+
+      &-item {
+        flex-basis: 50%;
+      }
+
+      &-item:not(:last-child) {
+        padding-right: 10px;
+      }
+
+      &-item:nth-child(2n) {
+        text-align: right;
+      }
+
+      &-item:nth-child(-n+2) {
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+  &__nav {
+    width: 74.4%;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    &-item:not(:first-child) {
+      padding-left: 5px;
+    }
+
+    &-link {
+      position: relative;
+      z-index: 10;
+      outline: 0;
+      transition: color 0.3s ease-in-out;
+    }
+
+    &-link::after {
+      @include before-after;
+      top: -2px;
+      right: -8px;
+      left: -8px;
+      bottom: -2px;
+      background-color: $color-focus;
+    }
+
+    &-link:focus-visible::after {
+      opacity: 1;
+    }
+
+    &-link:hover {
+      color: $color-main;
+    }
+
+    &-link:active {
+      color: $color-active;
+    }
+  }
+
+  &__burger-btn {
+    display: none;
+  }
+
+  &__burger-svg {
+    width: 24px;
+    height: 24px;
+
+    &-use {
+      fill: $color-main;
+    }
+  }
+
+  &__button-block {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    width: 15.9%;
+    max-width: 100px;
+  }
+}
+
+.header-bottom {
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__search {
+    display: flex;
+    justify-content: space-between;
+    width: 83%;
+  }
+
+  &__form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 240%;
+    padding-top: 8px;
+    padding-bottom: 7px;
+    padding-left: 32px;
+    padding-right: 32px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background-color: $color-background;
+    outline: 0;
+    transition-property: background-color, outline;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+  }
+
+  &__form:hover {
+    background-color: $color-background-dark;
+  }
+
+  &__form:focus-within {
+    z-index: 10;
+    outline: 2px solid $color-main;
+    outline-offset: -2px;
+    background-color: $color-background-focus;
+  }
+
+  &__button-block {
+    display: flex;
+    justify-content: space-between;
+    min-width: 100px;
+  }
+
+  &__block-input {
+    width: 100%;
+  }
+
+  &__input {
+    padding-left: 28px;
+    width: 95%;
+    font-family: 'Open Sans';
+    font-size: 16px;
+    border: 0;
+    outline: 0;
+    background-color: $color-none;
+    background-position: center left;
+    transition: background-color 0.3s ease-in-out;
+    @include search($url-color-addtext);
+  }
+
+  &__input:active {
+    @include search($url-color-active);
+  }
+
+  &__input:focus-visible {
+    @include search($url-color-active);
+  }
+
+  &__select {
+
+      &-toggle {
+        position: relative;
+        z-index: 100;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        padding-left: 27px;
+        padding-right: 31px;
+        font-family: 'Open Sans';
+        font-style: normal;
+        color: $color-main;
+        border: 0;
+        border:  2px solid $color-border;
+        border-radius: 0;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        transition-property: border-color, background-color;
+        transition-duration: 0.3s;
+        transition-timing-function: ease-in-out;
+      }
+
+      &-toggle::after {
+        width: 13px;
+        height: 8px;
+        background-image: url(../img/select_arrow.svg);
+        transition: background-image 0.3s ease-in-out;
+      }
+
+      &-toggle:focus-visible {
+        border-color: $color-main;
+        background-color: $color-background-focus;
+      }
+
+      &-toggle:hover {
+        border-color: $color-main;
+      }
+
+      &-toggle:active {
+        border-color: $color-active;
+      }
+
+      &-dropdown {
+        z-index: 50;
+        max-height: 203px;
+        top: 53px;
+        padding-top: 28px;
+        padding-left: 29px;
+        padding-bottom: 10px;
+        border: 2px solid $color-border;
+        border-radius: 0;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        animation: open-animation 0.3s ease-in-out;
+      }
+
+      &-options {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        max-height: 190px;
+      }
+
+      &-option {
+        padding: 0;
+        padding-right: 10px;
+        margin-bottom: 10px;
+      }
+
+      &-option.select__option_selected {
+        background-color: $color-focus;
+      }
+
+      &-option::after {
+        right: 16px;
+      }
+  }
+}
+
+@media (max-width: $breakepoint-first) {
+  .header-top {
+    padding-top: 18px;
+    padding-bottom: 18px;
+    background-color: $color-light;
+    &__nav {
+      display: none;
+    }
+
+    &__left-block {
+      width: 100%;
+    }
+  }
+
+  .subheader-top {
+    display: block;
+  }
+
+  .header-middle {
+    padding-top: 31px;
+
+    &__nav {
+      width: 73.5%;
+    }
+  }
+
+  .header-bottom {
+    &__button-block {
+      display: none;
+    }
+
+    &__search {
+      width: 100%;
+    }
+
+    &__form {
+      width: 203%;
+    }
+
+    &__input {
+      width: 94%;
+    }
+
+    &__select {
+
+      &-toggle {
+        padding-top: 18px;
+        padding-bottom: 16px;
+        padding-left: 30px;
+      }
+    }
+  }
+}
+
+@media (max-width: $breakepoint-second) {
+  .subheader-top {
+    padding-top: 12px;
+    padding-bottom: 15px;
+
+    &__button-block {
+      display: none;
+    }
+
+    &__nav {
+      width: 100%;
+    }
+  }
+
+  .header-middle {
+    padding-top: 33px;
+
+    &__nav {
+      display: none;
+    }
+
+    &__button-block {
+      display: flex;
+    }
+
+    &__burger-btn {
+      display: block;
+    }
+
+    &__link {
+      padding-left: 75px;
+      outline: 0;
+    }
+  }
+
+  .header-bottom {
+    &__input {
+      width: 91%;
+    }
+  }
+}
+
+@media (max-width: $breakepoint-third) {
+  .header-top {
+    padding-bottom: 15px;
+
+    &__block {
+      margin-bottom: 16px;
+    }
+
+    &__left-block {
+      display: block;
+    }
+
+    &__link {
+      justify-content: left;
+    }
+  }
+
+  .subheader-top {
+    display: none;
+  }
+
+  .overheader {
+    display: block;
+  }
+
+  .header-middle {
+    margin-bottom: 16px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-top: 1px solid $color-background;
+    border-bottom: 1px solid $color-background;
+
+    &__link {
+      display: none;
+    }
+
+    &__button-block {
+      width: 34%;
+    }
+
+    &__burger-svg {
+      transform: translateX(4px);
+    }
+
+    &__menu {
+      padding-top: 12px;
+      background-image: none;
+
+      &-list {
+        display: block;
+        max-height: initial;
+        padding-bottom: 0;
+        margin-bottom: 25px;
+      }
+
+      &-item:nth-child(3n) {
+        margin-bottom: 41px;
+      }
+
+      &-item:last-child {
+        margin-bottom: 0;
+      }
+
+      &-btn {
+        padding-left: 4px;
+        margin-bottom: 24px;
+      }
+
+      &-footer {
+        display: block;
+      }
+    }
+  }
+
+  .header-bottom {
+    &__search {
+      display: block;
+    }
+
+    &__form {
+      margin-bottom: 16px;
+      padding-top: 15px;
+      padding-bottom: 13px;
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    &__input {
+      width: 87%;
+    }
+
+    &__select {
+
+      &-toggle {
+        padding-left: 30px;
+        width: 100%;
+        border-radius: 10px;
+      }
+    }
+  }
+}
+
+.open {
+  display: block;
+}

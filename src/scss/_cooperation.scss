@@ -1,0 +1,148 @@
+.section-cooperation {
+  margin-top: -14px;
+
+  &__header {
+    margin-bottom: 32px;
+  }
+
+  &__block {
+    max-width: 843px;
+    margin-bottom: 32px;
+
+    &-header {
+      margin-bottom: 12px;
+      font-size: 24px;
+      line-height: 33px;
+      font-weight: 400;
+    }
+
+    &-text {
+      margin-bottom: 12px;
+      font-size: 16px;
+      line-height: 29px;
+      color: $color-cost;
+    }
+
+    &-list {
+      &-item {
+        padding-left: 37px;
+        max-width: 624px;
+        background-repeat: no-repeat;
+        background-position: left top;
+
+        &-1 {
+          background-image: url(../img/network.svg);
+        }
+        &-2 {
+          background-image: url(../img/briefcase.svg);
+        }
+        &-3 {
+          background-image: url(../img/git-pull-request.svg);
+        }
+      }
+
+      &-text {
+        line-height: 24px;
+      }
+    }
+  }
+
+  &__span {
+    display: inline-block;
+    margin-bottom: 13px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22px;
+    color: $color-highlight;
+  }
+
+  &__list {
+    padding-left: 18px;
+
+    &-item {
+      padding-left: 8px;;
+    }
+
+    &-item::marker {
+      font-family: 'Open Sans';
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 180%;
+      color: $color-highlight;
+    }
+  }
+
+  &__finalblock {
+    margin-bottom: 68px;
+    padding-top: 23px;
+    padding-left: 109px;
+    max-width: 624px;
+    min-height: 116px;
+    background-image: url(../img/pen.webp);
+    background-repeat: no-repeat;
+    background-position: left center;
+
+    &-header {
+      line-height: 36px;
+    }
+  }
+}
+
+
+@media (max-width: $breakepoint-first) {
+  .section-cooperation {
+    &__block {
+      margin-bottom: 31px;
+      &-list {
+        padding-left: 0;
+      }
+    }
+
+    &__finalblock {
+      margin-bottom: 70px;
+    }
+  }
+}
+
+@media (max-width: $breakepoint-third) {
+  .section-cooperation {
+    margin-top: 0;
+
+    &__block {
+
+      &-header {
+        font-size: 16px;
+        line-height: 22px;
+
+        &-3 {
+          margin-bottom: 10px;
+          font-size: 14px;
+        }
+      }
+
+      &-text {
+        margin-bottom: 11px;
+        font-size: 14px;
+        line-height: 25px;
+      }
+
+      &-list {
+        &-text {
+          line-height: 21px;
+        }
+      }
+    }
+
+    &__finalblock {
+      min-height: 72px;
+      padding-top: 0;
+      padding-left: 52px;
+      background-image: url(../img/pen_320.webp);
+
+      &-header {
+        max-width: 190px;
+        line-height: 24px;
+      }
+    }
+  }
+}
